@@ -11,7 +11,7 @@ struct BitmapInfoHeader
 {
     int32_t     headerSize{40};
     int32_t     width;
-    int32_t     heigh;
+    int32_t     height;
     int16_t     planes{1};
     int16_t     bitsPerPixel{24}; // 3 * 8 -> RGB
     int32_t     compression{0}; // not used;

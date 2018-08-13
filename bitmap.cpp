@@ -11,6 +11,15 @@ Bitmap::~Bitmap() {};
 
 bool Bitmap::write(string filename)
 {
+    BitmapFileHeader fileHeader;
+    BitmapInfoHeader infoHeader;
+
+    fileHeader.fileSize = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader) + (_width * _height * 3));
+    fileHeader.dataOffset = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader);
+
+    infoHeader.width = _width;
+    infoHeader.height = _height;
+
     return false;
 }
 
