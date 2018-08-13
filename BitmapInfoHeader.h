@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-using namespace std;
+using   namespace std;
 
 #pragma pack(2)
 
