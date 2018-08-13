@@ -3,7 +3,7 @@
 Mandelbrot::Mandelbrot(){}
 Mandelbrot::~Mandelbrot(){}
 
-static int getIterations(double x, double y)
+int Mandelbrot::getIterations(double x, double y)
 {
-     
+     return 0;
 }
