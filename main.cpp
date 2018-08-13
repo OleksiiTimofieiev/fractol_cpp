@@ -25,12 +25,14 @@ int main(void)
 
             int iterations = Mandelbrot::getIterations(xFractol, yFractol);
 
-            uint8_t red = (uint8_t)(256 * (double)iterations / Mandelbrot::MAX_ITERATIONS); // to get floation point division;
+            uint8_t color = (uint8_t)(256 * (double)iterations / Mandelbrot::MAX_ITERATIONS); // to get floation point division;
 
-            bitmap.setPixel(x, y, red, red, red);
+            color = color * color * color; //more "corona";
 
-            if (red < min) min = red;
-            if (red > max) max = red;
+            bitmap.setPixel(x, y, 0, color, 0);
+
+            if (color < min) min = color;
+            if (color > max) max = color;
         }
     }
 
