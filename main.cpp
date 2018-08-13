@@ -1,8 +1,9 @@
 
 #include <iostream>
+#include <cstdint>
 
 #include "Bitmap.h"
-
+#include "Mandelbrot.h"
 
 using namespace std;
 
@@ -19,11 +20,17 @@ int main(void)
     {
         for (int x = 0; x < WIDTH; x++)
         {
-            double xFractol = (x - WIDTH / 2) * 2.0 / WIDTH;
+            double xFractol = (x - WIDTH / 2 - 200) * 2.0 / HEIGHT;
             double yFractol = (y - HEIGHT / 2) * 2.0 / HEIGHT;
 
-            if (yFractol < min) min = yFractol;
-            if (yFractol > max) max = yFractol;
+            int iterations = Mandelbrot::getIterations(xFractol, yFractol);
+
+            uint8_t red = (uint8_t)(256 * (double)iterations / Mandelbrot::MAX_ITERATIONS); // to get floation point division;
+
+            bitmap.setPixel(x, y, red, red, red);
+
+            if (red < min) min = red;
+            if (red > max) max = red;
         }
     }
 
