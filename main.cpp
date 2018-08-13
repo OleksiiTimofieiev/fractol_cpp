@@ -1,20 +1,13 @@
-//============================================================================
-// Name        : Fractal.cpp
-// Author      :
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <iostream>
 #include <cstdint>
 #include <memory>
 #include <math.h>
 #include "Mandelbrot.h"
 #include "Bitmap.h"
+#include "Zoom.h"
+#include "ZoomList.h"
 
 using namespace std;
-// using namespace caveofprogramming;
 
 int main()
 {
