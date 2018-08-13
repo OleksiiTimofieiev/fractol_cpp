@@ -17,7 +17,7 @@ bool Bitmap::write(string filename)
     BitmapFileHeader fileHeader;
     BitmapInfoHeader infoHeader;
 
-    fileHeader.fileSize = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader) + (_width * _height * 3);
+    fileHeader.fileSize = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader) + _width * _height * 3;
     fileHeader.dataOffset = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader);
 
     infoHeader.width = _width;
@@ -25,14 +25,14 @@ bool Bitmap::write(string filename)
 
     ofstream file;
 
-    file.open(filename.c_str(), ios::out | ios::binary);
+    file.open(filename, ios::out | ios::binary);
 
     if (!file)
         return false;
 
 
     file.write((char *)&fileHeader, sizeof(fileHeader));
-    file.write((char *)&infoHeader, sizeof(fileHeader));
+    file.write((char *)&infoHeader, sizeof(infoHeader));
     file.write((char *)_pPixels.get(), _width * _height * 3);
 
     file.close();
@@ -40,7 +40,7 @@ bool Bitmap::write(string filename)
     if (!file)
         return false;
 
-        return true;
+    return true;
 }
 
 void Bitmap::setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue)
