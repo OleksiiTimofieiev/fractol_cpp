@@ -1,4 +1,5 @@
-#include "bitmap.h"
+#include "Bitmap.h"
+#include "BitmapInfoHeader.h"
 
 Bitmap::Bitmap(int width, int height) : _width(width), _height(height), _pPixels(new uint8_t[width * height * 3]{})
 {
