@@ -20,14 +20,14 @@ int main(void)
         for (int x = 0; x < WIDTH; x++)
         {
             double xFractol = (x - WIDTH / 2) * 2.0 / WIDTH;
-            double yFractol = 0;
+            double yFractol = (y - HEIGHT / 2) * 2.0 / HEIGHT;
 
-            if (xFractol < min) min = xFractol;
-            if (xFractol > max) max = xFractol;
+            if (yFractol < min) min = yFractol;
+            if (yFractol > max) max = yFractol;
         }
     }
 
-    cout << min << ',' << max << endl;
+    cout << min << ", " << max << endl;
 
     bitmap.write("test.bmp");
 
