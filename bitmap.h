@@ -11,6 +11,7 @@ class Bitmap
 private:
     int     _width{0};
     int     _height{0};
+    unique_ptr<uint8_t[]> _pPixels{nullptr};
     
 public:
     Bitmap(int width, int height);
