@@ -17,7 +17,7 @@ bool Bitmap::write(string filename)
     BitmapFileHeader fileHeader;
     BitmapInfoHeader infoHeader;
 
-    fileHeader.fileSize = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader) + (_width * _height * 3));
+    fileHeader.fileSize = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader) + (_width * _height * 3);
     fileHeader.dataOffset = sizeof(BitmapFileHeader) + sizeof(BitmapInfoHeader);
 
     infoHeader.width = _width;
@@ -32,7 +32,7 @@ bool Bitmap::write(string filename)
 
 
     file.write((char *)&fileHeader, sizeof(fileHeader));
-    file.write((char *)&info Header, sizeof(fileHeader));
+    file.write((char *)&infoHeader, sizeof(fileHeader));
     file.write((char *)_pPixels.get(), _width * _height * 3);
 
     file.close();
