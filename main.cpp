@@ -19,7 +19,7 @@ int main(void)
     {
         for (int x = 0; x < WIDTH; x++)
         {
-            double xFractol = 0;
+            double xFractol = (x - WIDTH / 2) * 2.0 / WIDTH;
             double yFractol = 0;
 
             if (xFractol < min) min = xFractol;
