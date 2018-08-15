@@ -14,7 +14,7 @@ class ZoomList
 private:
     double _xCenter{0};
     double _yCenter{0};
-    double _scale{0};
+    double _scale{1.0};
 
     int _width{0};
     int _height{0};
