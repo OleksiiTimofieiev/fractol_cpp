@@ -1,6 +1,9 @@
 #include "ZoomList.h"
 
-ZoomList::Zoomlist(int width, int height) : _width(width, _height(height))
+ZoomList::ZoomList() {};
+ZoomList::~ZoomList(){};
+
+ZoomList::ZoomList(int width, int height) : _width(width), _height(height)
 {
 
 }

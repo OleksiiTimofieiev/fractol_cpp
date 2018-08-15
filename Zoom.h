@@ -8,6 +8,7 @@ struct Zoom
     double _scale{0.0};
     
     Zoom(int x, int y, int scale) : _x(x), _y(y), _scale(scale) {};
+    Zoom(){};
 };
 
 #endif

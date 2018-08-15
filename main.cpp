@@ -2,9 +2,9 @@
 #include <cstdint>
 #include <memory>
 #include <math.h>
+
 #include "Mandelbrot.h"
 #include "Bitmap.h"
-#include "Zoom.h"
 #include "ZoomList.h"
 
 using namespace std;
@@ -12,13 +12,17 @@ using namespace std;
 int main()
 {
 
-    int const WIDTH = 800;
+    int const WIDTH = 800; 
     int const HEIGHT = 600;
 
     Bitmap bitmap(WIDTH, HEIGHT);
 
     double min = 999999;
     double max = -999999;
+
+    ZoomList _zoomList;
+
+    _zoomList.add(Zoom(WIDTH / 2, HEIGHT / 2, 1));
 
     unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0});
     unique_ptr<int[]> fractal(new int[WIDTH * HEIGHT]{0});
