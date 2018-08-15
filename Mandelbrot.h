@@ -1,16 +1,26 @@
-#ifndef MANDELBROT_H
-#define MANDELBROT_H
+/*
+ * Mandelbrot.h
+ *
+ *  Created on: Aug 21, 2015
+ *      Author: johnpurcell
+ */
 
-class Mandelbrot
-{
+#ifndef MANDELBROT_H_
+#define MANDELBROT_H_
+
+namespace caveofprogramming {
+
+class Mandelbrot {
 public:
-    static const int  MAX_ITERATIONS = 1000;
+	static const int MAX_ITERATIONS = 1000;
 
 public:
-    Mandelbrot();
-    virtual ~Mandelbrot();
+	Mandelbrot();
+	virtual ~Mandelbrot();
 
-    static int getIterations(double x, double y);  // we do not need any instatnces;
+	static int getIterations(double x, double y);
 };
 
-#endif
+} /* namespace caveofprogramming */
+
+#endif /* MANDELBROT_H_ */

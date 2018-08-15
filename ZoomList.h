@@ -1,31 +1,37 @@
-#ifndef ZOOMLIST_H
-#define ZOOMLIST_H
+/*
+ * ZoomList.h
+ *
+ *  Created on: Sep 20, 2015
+ *      Author: johnpurcell
+ */
+
+#ifndef ZOOMLIST_H_
+#define ZOOMLIST_H_
 
 #include <vector>
 #include <utility>
-#include <iostream>
-
 #include "Zoom.h"
 
 using namespace std;
 
-class ZoomList
-{
+namespace caveofprogramming {
+
+class ZoomList {
 private:
-    double _xCenter{0};
-    double _yCenter{0};
-    double _scale{1.0};
+	double m_xCenter{0};
+	double m_yCenter{0};
+	double m_scale{1.0};
 
-    int _width{0};
-    int _height{0};
-    std::vector<Zoom> zooms;
+	int m_width{0};
+	int m_height{0};
+	vector<Zoom> zooms;
+
 public:
-    ZoomList();
-    ZoomList(int width, int height);
-    ~ZoomList();
-
-    void add(const Zoom & zoom);
-    pair <double,double> doZoom(int x, int y);
+	ZoomList(int width, int height);
+	void add(const Zoom& zoom);
+	pair<double, double> doZoom(int x, int y);
 };
 
-#endif
+} /* namespace caveofprogramming */
+
+#endif /* ZOOMLIST_H_ */

@@ -1,27 +1,39 @@
+/*
+ * ZoomList.cpp
+ *
+ *  Created on: Sep 20, 2015
+ *      Author: johnpurcell
+ */
+
 #include "ZoomList.h"
+#include <iostream>
 
-ZoomList::ZoomList() {};
-ZoomList::~ZoomList(){};
+using namespace std;
 
-ZoomList::ZoomList(int width, int height) : _width(width), _height(height)
-{
+namespace caveofprogramming {
+
+ZoomList::ZoomList(int width, int height) :
+		m_width(width), m_height(height) {
+	// TODO Auto-generated constructor stub
 
 }
 
-void ZoomList::add(const Zoom &zoom)
-{
-    zooms.push_back(zoom);
+void ZoomList::add(const Zoom& zoom) {
+	zooms.push_back(zoom);
 
-    _xCenter += (zoom._x - _width / 2) * _scale;
-    _yCenter  += (zoom._y - _height / 2) * _scale;
+	m_xCenter += (zoom.x - m_width / 2) * m_scale;
+	m_yCenter += (zoom.y - m_height / 2) * m_scale;
 
-    _scale *= _scale;
+	m_scale *= zoom.scale;
+
+	cout << m_xCenter << ", " << m_yCenter << ", " << m_scale << endl;
 }
 
-pair<double, double> ZoomList::doZoom(int x, int y)
-{
-    double xFractol = (x - _width / 2) * _scale + _xCenter;
-    double yFractol = (x - _height / 2) * _scale + _yCenter;
+pair<double, double> ZoomList::doZoom(int x, int y) {
+	double xFractal = (x - m_width / 2) * m_scale + m_xCenter;
+	double yFractal = (y - m_height / 2) * m_scale + m_yCenter;
 
-    return pair<double, double>(xFractol, 0);
+	return pair<double, double>(xFractal, yFractal);
 }
+
+} /* namespace caveofprogramming */

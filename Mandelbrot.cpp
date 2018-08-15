@@ -1,28 +1,44 @@
+/*
+ * Mandelbrot.cpp
+ *
+ *  Created on: Aug 21, 2015
+ *      Author: johnpurcell
+ */
+
 #include <complex>
 #include "Mandelbrot.h"
 
 using namespace std;
 
-Mandelbrot::Mandelbrot(){}
-Mandelbrot::~Mandelbrot(){}
+namespace caveofprogramming {
 
-int Mandelbrot::getIterations(double x, double y)
-{
-    complex<double> z = 0;
-    complex<double> c(x,y);
+Mandelbrot::Mandelbrot() {
+	// TODO Auto-generated constructor stub
 
-    int iterations = 0;
-
-    while (iterations < MAX_ITERATIONS)
-    {
-        z = z * z + c; // mandelbrot set;
-
-        if(abs(z) > 2) // magnitude of the complex number;
-            break;
-
-        iterations++;
-    }
-    
-
-     return iterations;
 }
+
+Mandelbrot::~Mandelbrot() {
+	// TODO Auto-generated destructor stub
+}
+
+int Mandelbrot::getIterations(double x, double y) {
+
+	complex<double> z = 0;
+	complex<double> c(x, y);
+
+	int iterations = 0;
+
+	while(iterations < MAX_ITERATIONS) {
+		z = z*z + c;
+
+		if(abs(z) > 2) {
+			break;
+		}
+
+		iterations++;
+	}
+
+	return iterations;
+}
+
+} /* namespace caveofprogramming */
