@@ -4,6 +4,8 @@
 #include <vector>
 #include <utility>
 
+#include "Zoom.h"
+
 using namespace std;
 
 class ZoomList

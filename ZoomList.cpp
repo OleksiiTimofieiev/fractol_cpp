@@ -12,5 +12,5 @@ void ZoomList::add(const Zoom &zoom)
 
 pair<double, double> doZoom(int x, int y)
 {
-    
+    return pair<double,double>(0,0);
 }
