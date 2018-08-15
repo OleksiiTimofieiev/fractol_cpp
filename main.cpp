@@ -20,7 +20,7 @@ int main()
     double min = 999999;
     double max = -999999;
 
-    ZoomList _zoomList;
+    ZoomList _zoomList(WIDTH, HEIGHT);
 
     _zoomList.add(Zoom(WIDTH / 2, HEIGHT / 2, 1));
 
